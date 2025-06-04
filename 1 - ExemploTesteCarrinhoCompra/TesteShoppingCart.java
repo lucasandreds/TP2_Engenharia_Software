@@ -25,21 +25,37 @@ public class TesteShoppingCart {
 
   @Test
   public void testAddItem() {
+    Item newItem = new Item("NEWITEM", 5.0);
+    shoppingCart.addItem(newItem);
+    assertEquals(3,shoppingCart.getItemCount());
+    assertTrue(shoppingCart.getItems().contains(newItem));
     // Escreva aqui seu código de teste
   }
 
   @Test
   public void testRemoveItem() {
+    Item newItem = new Item("NEWITEM", 5.0);
+    shoppingCart.addItem(newItem);
+    shoppingCart.removeItem(newItem);
+    assertFalse(shoppingCart.getItems().contains(newItem));
+    assertEquals(2,shoppingCart.getItemCount());
     // Escreva aqui seu código de teste
   }
 
   @Test
   public void testGetTotalPrice() {
+    assertEquals(185.0,shoppingCart.getTotalPrice(), 0.001);
+    Item newItem = new Item("NEWITEM", 5.0);
+    shoppingCart.addItem(newItem);
+    assertEquals(190.0,shoppingCart.getTotalPrice(), 0.001);
     // Escreva aqui seu código de teste
   }
 
   @Test
   public void testClearCart() {
+    shoppingCart.clearCart();
+    assertEquals(0,shoppingCart.getItemCount());
+    assertTrue(shoppingCart.getItems().isEmpty());
     // Escreva aqui seu código de teste
   }
 }
