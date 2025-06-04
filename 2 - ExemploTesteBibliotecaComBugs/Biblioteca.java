@@ -49,6 +49,9 @@ public class Biblioteca {
     // a única "regra de negócio" implementada nesta classe.
     // Uma implementação real tende a possuir diversas
     // outras regras de negócio
+    if (repo.livroEstaEmprestado (livro)){
+      throw new ExcecaoLivroEmprestado();
+    }
     repo.emprestarLivro(livro, usuario);
   }
 
@@ -57,6 +60,6 @@ public class Biblioteca {
   }
 
   public List<Livro> livrosEmprestadosUsuario(Usuario usuario) {
-    return repo.livrosEmprestadosUsuario(null);
+    return repo.livrosEmprestadosUsuario(usuario);
   }
 }
