@@ -69,7 +69,7 @@ describe('TODOMvc App', () => {
       .should('have.length', 2);
   });
 
-    it('Edição de uma tarefa', () => {
+  it('Edição de uma tarefa', () => {
     cy.visit(''); 
 
     cy.get('[data-cy=todo-input]')
