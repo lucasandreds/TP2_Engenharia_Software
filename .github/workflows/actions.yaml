@@ -5,9 +5,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '5 - Demo-CI: Aula Prática sobre Servidores de Integração Contínua/demo-ci/**'  # Filtra apenas alterações nesta pasta
   pull_request:
     branches:
       - main
+    paths:
+      - '5 - Demo-CI: Aula Prática sobre Servidores de Integração Contínua/demo-ci/**'  # Filtra apenas PRs que afetam esta pasta
+
 
 jobs:
   pipeline:
@@ -23,7 +28,9 @@ jobs:
           java-version: 1.8
 
       - name: Build
+        working-directory: 5 - Demo-CI: Aula Prática sobre Servidores de Integração Contínua/demo-ci # Executa os comandos nesta pasta
         run: mvn package -Dmaven.test.skip=true # Compila o código fonte
 
       - name: Unit Test
+        working-directory: 5 - Demo-CI: Aula Prática sobre Servidores de Integração Contínua/demo-ci
         run: mvn test # Executada os testes de unidade
