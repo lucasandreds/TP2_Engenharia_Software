@@ -28,9 +28,9 @@ jobs:
           java-version: 1.8
 
       - name: Build
-        working-directory: ./'5 - Demo-CI: Aula Prática sobre Servidores de Integração Contínua'/demo-ci # Executa os comandos nesta pasta
+        working-directory: ./5\ -\ Demo-CI:\ Aula\ Prática\ sobre\ Servidores\ de\ Integração\ Contínua/demo-ci # Executa os comandos nesta pasta
         run: mvn package -Dmaven.test.skip=true # Compila o código fonte
 
       - name: Unit Test
-        working-directory: ./'5 - Demo-CI: Aula Prática sobre Servidores de Integração Contínua'/demo-ci
+        working-directory: ./5\ -\ Demo-CI:\ Aula\ Prática\ sobre\ Servidores\ de\ Integração\ Contínua/demo-ci
         run: mvn test # Executada os testes de unidade
